@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block title %}Welcome{% endblock %} {% block
+content %}
+<h1>Card</h1>
+Question: {{card.question}} <br />
+Answer: {{card.answer}}
+<p>
+  <button>
+    <a href="{{ url_for('welcome') }}"> Welcome Page </a>
+  </button>
+  <button>
+    {% if index < max_index %}
+    <a href="{{ url_for('cards', index=index + 1) }}"> Next card </a>
+    {% else %}
+    <a href="{{ url_for('cards', index=0) }}"> Start Over </a>
+    {% endif %}
+  </button>
+</p>
+<p>
+  <button>
+    <a href="{{ url_for('remove_card', index=index) }}"> Remove Card </a>
+  </button>
+</p>
+{% endblock %}
