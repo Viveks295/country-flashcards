@@ -1,1 +1,1 @@
-web: gunicorn --chdir flask-backend flashcards:app
+web: gunicorn --chdir flask-backend app:app
