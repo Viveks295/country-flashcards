@@ -17,7 +17,7 @@ def api_card_list():
   return jsonify(db)
 
 @app.route('/')
-@cross_origin
+@cross_origin()
 def serve():
   return send_from_directory(app.static_folder, 'index.html')
 
